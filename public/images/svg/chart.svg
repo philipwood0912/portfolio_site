@@ -1,0 +1,41 @@
+<svg id="Layer_1 svgs" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 574.95 603.94">
+  <defs>
+    <style>
+      .cls-1, .cls-2 {
+        fill: none;
+        stroke: #fff;
+        stroke-miterlimit: 10;
+      }
+
+      .cls-1 {
+        stroke-linecap: square;
+        stroke-width: 25px;
+      }
+
+      .cls-2 {
+        stroke-linecap: round;
+        stroke-width: 20px;
+      }
+
+      .cls-3 {
+        font-size: 70px;
+      }
+
+      .cls-3, .cls-4 {
+        fill: #fff;
+        font-family: Arial-Black, Arial Black;
+        font-weight: 800;
+      }
+
+      .cls-4 {
+        font-size: 60px;
+      }
+    </style>
+  </defs>
+  <title>chart</title>
+  <polyline class="cls-1" points="63.45 20 63.45 519 562.45 519"/>
+  <polyline class="cls-2" points="62.95 518.5 235.95 269.5 285.95 379.5 410.95 121.5 469.95 258.5 562.95 44.5"/>
+  <text class="cls-3" transform="translate(1 582.48)">0</text>
+  <text class="cls-4" transform="translate(0 51.48)">Y</text>
+  <text class="cls-4" transform="translate(528 583.48)">X</text>
+</svg>

@@ -1,0 +1,11 @@
+@import '_var';
+@import 'modules/_nav';
+@import 'modules/_header';
+@import 'modules/_svg';
+@import 'modules/_about';
+@import 'modules/_form';
+@import 'modules/_footer';
+
+body {
+    font-family: $main-font;
+}

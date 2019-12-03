@@ -1,0 +1,35 @@
+#mainNav{
+    width: 100%;
+    border-top: 5px solid $off-color;
+    border-bottom: 5px solid $off-color;
+    background-color: white;
+    z-index: 10;
+    ul {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-around;
+        a{
+            text-decoration: none;
+            width: 100%;
+            li {
+                padding: 10px;
+                text-align: center;
+                h2 {
+                    color: $off-color;
+                    font-family: $main-font;
+                    font-weight: thin;
+                    font-size: 25px;
+                }
+            }
+        }
+    }
+}
+.sticky {
+    position: fixed;
+    top: 0;
+    width: 100%;
+  }
+
+.sticky + #mainCon {
+    padding-top: 60px;
+}

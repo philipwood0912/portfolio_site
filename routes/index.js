@@ -9,4 +9,11 @@ router.get('/', (req, res) => {
     res.render("home");
 })
 
+router.get('/Games', (req, res) => {
+    console.log('at games route');
+
+    res.json();
+
+})
+
 module.exports = router;
