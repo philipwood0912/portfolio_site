@@ -1,0 +1,14 @@
+#mainHead {
+    display:flex;
+    flex-direction:row;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+    height:100px;
+    #linkedin {
+        width: 60px;
+    }
+    #phil-logo{
+        width: 100px;
+    }
+}
