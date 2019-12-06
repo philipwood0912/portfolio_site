@@ -1,3 +1,15 @@
+@mixin tablet {
+    @media (min-width: #{600px}){
+        @content;
+    }
+}
+
+@mixin desktop {
+    @media (min-width: #{1000px}){
+        @content;
+    }
+}
+
 #mainHead {
     display:flex;
     flex-direction:row;
@@ -5,10 +17,38 @@
     align-items: center;
     padding: 10px 20px;
     height:100px;
+    @include desktop {
+        height: 150px;
+    }
+    .soc {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        width: 140px;
+        @include tablet {
+            width: 220px;
+        }
+    }
+    #github {
+        width: 60px;
+    }
     #linkedin {
         width: 60px;
     }
-    #phil-logo{
+    #phil-logo {
         width: 100px;
+        @include tablet {
+            width: 225px;
+        }
+        @include desktop {
+            width: 325px;
+        }
+    }
+    #play {
+        display: none;
+        @include tablet {
+            display: block;
+            width: 60px;
+        }
     }
 }
