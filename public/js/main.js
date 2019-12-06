@@ -24,6 +24,7 @@
                 svgParent.parentElement.classList.toggle("card-flip");
                 svgDoc.href = `/${svg.dataset.iconref}`;
                 svgDoc.id = `${svg.dataset.numref}`;
+                svg.style.opacity = 0;
             });
             svgDoc.addEventListener("click", parseFlipData);
         });
@@ -210,9 +211,9 @@
     icons.forEach(icon => {
         icon.addEventListener("mouseover", function(e) {
             skillText.textContent = `${e.target.dataset.skillref}`;
-            skillText.classList.remove("hidden");
+            skillText.style.opacity = 1;
             icon.addEventListener("mouseleave", function(e) {
-                skillText.classList.add("hidden");
+                skillText.style.opacity = 0;
             });
         });
     });

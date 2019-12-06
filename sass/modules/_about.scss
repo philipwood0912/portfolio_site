@@ -103,7 +103,8 @@
             width: 100%;
             padding: 10px;
             background-color:$main-color;
-            transition: 1s ease;
+            transition: 0.5s ease;
+            opacity: 0;
             @include tablet {
                 font-size: 45px;
             }
