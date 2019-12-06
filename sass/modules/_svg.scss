@@ -94,16 +94,13 @@
 
   .pieces {
       width: 100%;
+      transition: 1s ease;
   }
   #web {
       width: 95%;
   }
   #chart {
       width: 85%;
-  }
-
-  #7 {
-      width: 50%;
   }
 
   .overlay {
