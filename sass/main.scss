@@ -5,7 +5,33 @@
 @import 'modules/_about';
 @import 'modules/_form';
 @import 'modules/_footer';
+@import 'modules/_lightbox';
+@import 'modules/_video';
+
+@mixin tablet {
+    @media (min-width: #{600px}){
+        @content;
+    }
+}
+
+@mixin desktop {
+    @media (min-width: #{1000px}){
+        @content;
+    }
+}
+
+@mixin desktopBig {
+    @media (min-width: #{1200px}){
+        @content;
+    }
+}
 
 body {
+    margin: 0 auto;
     font-family: $main-font;
+    max-width: 2000px;
+}
+
+.hidden {
+    display: none;
 }

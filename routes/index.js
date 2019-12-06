@@ -12,8 +12,51 @@ router.get('/', (req, res) => {
 router.get('/Games', (req, res) => {
     console.log('at games route');
 
-    res.json();
+    let query = `SELECT ID, Name, Image FROM tbl_projects WHERE Type = "Games"`;
+    
+    sql.query(query, (err, result) => {
+        if(err){ throw err; console.log(err); }
+        console.log(result);
+        res.json(result);
+    })
+})
 
+router.get('/Data-Viz', (req, res) => {
+    console.log("at data-viz route");
+
+    let query = `SELECT ID, Name, Image FROM tbl_projects WHERE Type = "Data-Viz"`;
+    
+    sql.query(query, (err, result) => {
+        if(err){ throw err; console.log(err); }
+        console.log(result)
+        res.json(result);
+    })
+})
+
+router.get('/Web', (req, res) => {
+    console.log("at web route");
+
+    let query = `SELECT ID, Name, Image FROM tbl_projects WHERE Type = "Web"`;
+    
+    sql.query(query, (err, result) => {
+        if(err){ throw err; console.log(err); }
+
+        res.json(result);
+    })
+})
+
+router.get('/:id', (req, res) => {
+    console.log("at portfolio route");
+
+    let query = `SELECT * FROM tbl_projects WHERE ID = ${req.params.id}`;
+
+    sql.query(query, (err, result) => {
+        if(err){ throw err; console.log(err); }
+        result[0].Builds = result[0].Builds.split(',').map(function(item){item = item.trim();return item;});
+        console.log(result[0]);
+
+        res.json(result[0]);
+    })
 })
 
 module.exports = router;

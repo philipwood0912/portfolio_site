@@ -1,34 +1,165 @@
+@mixin tablet {
+    @media (min-width: #{600px}){
+        @content;
+    }
+}
+
+@mixin tabletMix {
+    @media (min-width: #{800px}){
+        @content;
+    }
+}
+
+@mixin desktopMix {
+    @media (min-width: #{110px}){
+        @content;
+    }
+}
 
 
-#aboutSec {
+@mixin desktopBig {
+    @media (min-width: #{1200px}){
+        @content;
+    }
+}
+
+@mixin desktop {
+    @media (min-width: #{1000px}){
+        @content;
+    }
+}
+
+#about {
     #aboutTitle {
+        margin: 0 auto;
         font-size: 50px;
         text-align: center;
+        color: $main-color;
+        padding: 5px 0px 30px 0px;
+        max-width: 1000px;
+        @include tablet {
+            font-size:60px;
+        }
+        @include desktop {
+            text-align: left;
+            font-size: 70px;
+        }
+        @include desktopMix {
+            margin-top: 30px;
+        }
+        @include desktopBig {
+            font-size: 75px;
+        }
     }
     #imgWrap {
-        text-align: center;
+        margin: 0 auto;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        max-width: 1000px;
+        padding-bottom: 15px;
+        @include desktop {
+            padding-bottom: 25px;
+        }
+        @include tabletMix {
+            flex-direction: row;
+        }
         img {
             border-radius: 100%;
         }
         p {
-            width: 340px;
+            padding: 20px 50px;
            margin: 0 auto;
+           color: $main-color;
+           font-size: 25px;
+           text-indent: 1.5em;
+           line-height: 30px;
+           @include tabletMix {
+            font-size: 30px;
+            line-height: 35px;
+            width: 500px;
+            padding: 20px;
+           }
+           
         }
     }
     #skillCon {
         background-color: $main-color;
+        padding: 10px 10px 20px 10px;
+        position: relative;
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        @include desktop {
+            display: flex;
+            flex-direction: row;
+        }
+        .skillText {
+            position: absolute;
+            text-align: center;
+            color: white;
+            font-size: 40px;
+            width: 100%;
+            padding: 10px;
+            background-color:$main-color;
+            transition: 1s ease;
+            @include tablet {
+                font-size: 45px;
+            }
+            @include desktop {
+                font-size: 50px;
+            }
+            @include desktopBig {
+                font-size: 55px;
+            }
+        }
         .skillwrap {
+            h2 {
+                text-align: center;
+                font-size: 40px;
+                color: white;
+                padding: 10px 0px;
+                @include tablet {
+                    font-size: 45px;
+                }
+                @include desktop {
+                    font-size: 50px;
+                }
+                @include desktopBig {
+                    font-size: 55px;
+                }
+            }
             .iconwrap {
                 display: flex;
                 flex-direction: row;
             flex-wrap: wrap;
+            justify-content: center;
+            @include desktop {
+                width: 400px;
+            }
             }
         }
     }
 }
 
 .icon {
+    width: 80px;
+    height: 80px;
+    margin: 5px;
+    background-color: $off-color;
+    filter: grayscale(100%);
+    padding: 10px;
+    border-radius: 10px;
+    position: relative;
+    transition: .5s ease;
     img {
-        width: 100px;
+        height: 80px;
+    width: 80px;
     }
+}
+
+.icon:hover {
+    filter: none;
+    background-color: white;
 }

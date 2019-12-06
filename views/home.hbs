@@ -1,11 +1,14 @@
 
-<div id="mainCon">
+<div id="main">
     <h2 id="portTitle">Portfolio Pieces</h2>
     <div class="scene-wrap">
         <div class="scene">
             <div class="card">
                 <div class="face front-flip">
-                    <object id="jet" data-iconref="Games" class="pieces" data="images/svg/jet.svg" type="image/svg+xml"></object>
+                    <div class="overlay">
+                        <h2>Games</h2>
+                    </div>
+                    <object id="jet" data-numref="0" data-iconref="Games" class="pieces" data="images/svg/invader.svg" type="image/svg+xml"></object>
                 </div>
                 <div class="face back-flip">
                 </div>
@@ -14,7 +17,10 @@
         <div class="scene">
             <div class="card">
                 <div class="face front-flip">
-                    <object id="chart" class="pieces" data="images/svg/chart.svg" type="image/svg+xml"></object>
+                    <div class="overlay">
+                        <h2>Data-Viz</h2>
+                    </div>
+                    <object id="chart" data-numref="1" data-iconref="Data-Viz" class="pieces" data="images/svg/chart.svg" type="image/svg+xml"></object>
                 </div>
                 <div class="face back-flip">
                 </div>
@@ -23,15 +29,27 @@
         <div class="scene">
             <div class="card">
                 <div class="face front-flip">
-                    <object id="web" class="pieces" data="images/svg/web.svg" type="image/svg+xml"></object>
+                    <div class="overlay">
+                        <h2>Web</h2>
+                    </div>
+                    <object id="web" data-numref="2" data-iconref="Web" class="pieces" data="images/svg/web.svg" type="image/svg+xml"></object>
                 </div>
                 <div class="face back-flip">
                 </div>
             </div>
         </div>
     </div>
-    <div id="aboutSec">
-        <h2 id="aboutTitle">Who am I?</h2>
+    <div class="lightbox hidden">
+        <div class="lb-content"></div>
+    </div>
+    <div class="videobox hidden">
+        <div class="video">
+            <button class="close">X</button>
+            <video id="video" src="video/videofinal.webm" controls="true"></video>
+        </div>
+    </div>
+    <div id="about">
+        <h2 id="aboutTitle">About Myself</h2>
         <div id="imgWrap">
             <img src="images/phil.jpg" alt="phil">
             <p>	Hi, my name is Philip Wood, and I’m a full stack developer living in London, Ontario. Currently I’m enrolled in Interactive Media Design at Fanshawe College, and from this course I’ve gained a passion for web development. Upon graduation I intend to continue learning more about my favorite language JavaScript.</p>
@@ -40,26 +58,28 @@
             <div class="skillwrap">
                 <h2>Skills</h2>
                 <div class="iconwrap">
-                    <div class="icon"><img src="images/icon/illustrator.svg" alt="svg"></div>
-                    <div class="icon"><img src="images/icon/photoshop.svg" alt="svg"></div>
-                    <div class="icon"><img src="images/icon/github.svg" alt="svg"></div>
-                    <div class="icon"><img src="images/icon/node.svg" alt="svg"></div>
+                    <div class="icon" data-skillref="Adobe Illustrator"><img data-skillref="Adobe Illustrator" src="images/icon/illustrator.svg" alt="svg"></div>
+                    <div class="icon" data-skillref="Adobe Photoshop"><img data-skillref="Adobe Photoshop" src="images/icon/photoshop.svg" alt="svg"></div>
+                    <div class="icon" data-skillref="Github"><img data-skillref="Github" src="images/icon/github.svg" alt="svg"></div>
+                    <div class="icon" data-skillref="Node.js"><img data-skillref="Node.js" src="images/icon/node.svg" alt="svg"></div>
                 </div>
             </div>
             <div class="skillwrap">
                 <h2>Languages</h2>
                 <div class="iconwrap">
-                    <div class="icon"><img src="images/icon/html-5.svg" alt="svg"></div>
-                    <div class="icon"><img src="images/icon/css-3.svg" alt="svg"></div>
-                    <div class="icon"><img src="images/icon/javascript.svg" alt="svg"></div>
-                    <div class="icon"><img src="images/icon/python.svg" alt="svg"></div>
-                    <div class="icon"><img src="images/icon/sass.svg" alt="svg"></div>
-                    <div class="icon"><img src="images/icon/mysql.svg" alt="svg"></div>
+                    <div class="icon" data-skillref="HTML5"><img data-skillref="HTML5" src="images/icon/html-5.svg" alt="svg"></div>
+                    <div class="icon" data-skillref="CSS3"><img data-skillref="CSS3" src="images/icon/css-3.svg" alt="svg"></div>
+                    <div class="icon" data-skillref="JavaScript"><img data-skillref="JavaScript" src="images/icon/javascript.svg" alt="svg"></div>
+                    <div class="icon" data-skillref="Python"><img data-skillref="Python" src="images/icon/python.svg" alt="svg"></div>
+                    <div class="icon" data-skillref="SASS"><img data-skillref="SASS" src="images/icon/sass.svg" alt="svg"></div>
+                    <div class="icon" data-skillref="MySQL"><img data-skillref="MySQL" src="images/icon/mysql.svg" alt="svg"></div>
                 </div>
             </div>
+            <h2 class="skillText hidden"></h2>
         </div>
     </div>
     <div id="contact">
+        <h2 id="contactTitle">Contact</h2>
         <form id="contactForm">
             <label for="name">NAME</label>
             <input id="name" type="text" name="name" placeholder="name">

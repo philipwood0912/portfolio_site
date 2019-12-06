@@ -1,4 +1,5 @@
 
+
 .scene-wrap{
     padding: 10px;
     display: flex;
@@ -32,28 +33,95 @@
   }
 
   .front-flip {
-      border-radius: 50px;
       transition: .5s ease;
-      background-color: $main-color;
+      overflow: hidden;
 
   }
 
 .back-flip {
     transform: rotateY( 180deg );
-    border: 5px solid;
-    background-color: blue;
-  }
-
+    border-radius: 50px;
+    ul {
+        text-align: center;
+        height: 300px;
+        width: 90%;
+        transition: 1s ease;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+        align-items: center;
+            li {
+                padding: 20px;
+                font-size: 35px;
+                color: $off-color;
+                transition: .5s ease;
+                cursor: pointer;
+                border-radius: 10px;
+                transition: 1s ease;
+            }
+            li:hover {
+                color: white;
+            }
+        
+    }
+}
+.portList {
+    filter: grayscale(100%);
+}
   .card-flip {
     transform: rotateY(180deg);
   }
 
   #portTitle{
-      font-size: 50px;
-      margin-top: 20px;
+      margin: 0 auto;
       text-align: center;
+      max-width: 1000px;
+      font-size: 50px;
+      margin-top: 40px;
+      color: $main-color;
+      @include tablet {
+        font-size: 60px;
+      }
+      @include desktop {
+          text-align: left;
+          font-size: 70px;
+      }
+      @include desktopBig {
+        font-size: 75px;
+          
+      }
   }
 
   .pieces {
-      width: 70%;
+      width: 100%;
+  }
+  #web {
+      width: 95%;
+  }
+  #chart {
+      width: 85%;
+  }
+
+  #7 {
+      width: 50%;
+  }
+
+  .overlay {
+      position: absolute;
+      background-color: rgba(0,0,0,0.4);
+      text-align: center;
+      border-radius: 20px;
+      transition: 1s ease;
+      pointer-events: none;
+      h2 {
+          font-size: 60px;
+          color: white;
+          width: 340px;
+        padding: 30px 0px;
+      }
+  }
+
+  .overlayAniHide {
+    transform: translate(0px, 200px);
+    opacity: 0;
   }

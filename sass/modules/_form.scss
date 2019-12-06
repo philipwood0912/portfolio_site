@@ -1,10 +1,82 @@
+@mixin tablet {
+    @media (min-width: #{600px}){
+        @content;
+    }
+}
+
+@mixin tabletMix {
+    @media (min-width: #{800px}){
+        @content;
+    }
+}
+
+@mixin desktopBig {
+    @media (min-width: #{1200px}){
+        @content;
+    }
+}
+
+@mixin desktop {
+    @media (min-width: #{1000px}){
+        @content;
+    }
+}
+
 #contact {
     width: 70%;
     margin: 0 auto;
+    @include desktopBig {
+        width: 60%;
+    }
+}
+
+#contactTitle {
+    margin: 0 auto;
+    font-size: 50px;
+    color: $main-color;
+    text-align: center;
+    margin-top: 40px;
+    margin-bottom: 30px;
+    max-width: 1000px;
+    @include tablet {
+        font-size: 60px;
+    }
+    @include desktop {
+        margin-top: 50px;
+        text-align: left;
+        font-size: 70px;
+    }
+    @include desktopBig {
+        font-size: 75px;
+    }
 }
 
 
 #contactForm {
     display: flex;
     flex-direction: column;
+    padding: 20px 0px;
+    label {
+        font-size: 40px;
+        color: $main-color;
+    }
+    input {
+        margin: 20px 0px;
+        height: 30px;
+
+    }
+    input::placeholder {
+        font-size: 22px;
+        color: $off-color;
+    }
+    textarea {
+        height: 100px;
+        margin: 20px 0px;
+    }
+    button {
+        width: 150px;
+        height: 60px;
+        color: $main-color;
+        font-size: 30px;
+    }
 }

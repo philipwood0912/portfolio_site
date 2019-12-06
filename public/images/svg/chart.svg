@@ -3,7 +3,7 @@
     <style>
       .cls-1, .cls-2 {
         fill: none;
-        stroke: #fff;
+        stroke: #007cff;
         stroke-miterlimit: 10;
       }
 
@@ -15,6 +15,20 @@
       .cls-2 {
         stroke-linecap: round;
         stroke-width: 20px;
+        stroke-dasharray: 1100;
+      }
+
+      .animation {
+        animation: graph 1.5s linear infinite;
+      }
+
+      @keyframes graph {
+        from {
+          stroke-dashoffset: 1000;
+        }
+        to {
+          stroke-dashoffset: 0;
+        }
       }
 
       .cls-3 {
@@ -22,7 +36,7 @@
       }
 
       .cls-3, .cls-4 {
-        fill: #fff;
+        fill: #007cff;
         font-family: Arial-Black, Arial Black;
         font-weight: 800;
       }
@@ -34,7 +48,7 @@
   </defs>
   <title>chart</title>
   <polyline class="cls-1" points="63.45 20 63.45 519 562.45 519"/>
-  <polyline class="cls-2" points="62.95 518.5 235.95 269.5 285.95 379.5 410.95 121.5 469.95 258.5 562.95 44.5"/>
+  <polyline id="line" class="cls-2" points="62.95 518.5 235.95 269.5 285.95 379.5 410.95 121.5 469.95 258.5 562.95 44.5"/>
   <text class="cls-3" transform="translate(1 582.48)">0</text>
   <text class="cls-4" transform="translate(0 51.48)">Y</text>
   <text class="cls-4" transform="translate(528 583.48)">X</text>
