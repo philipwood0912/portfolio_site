@@ -7,7 +7,7 @@
 } */
 
 const config = {
-    host: "cleardb.net",
+    host: "us-cdbr-iron-east-05.cleardb.net",
     port: 8889, // 8889 for mac 3306 for windows
     uname: "ba3ea472d057a9",
     pword: "7cea784f", // leave blank for windows
