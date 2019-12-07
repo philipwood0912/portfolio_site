@@ -54,8 +54,12 @@ http://localhost:5000
 
 * Chrome - 100%
 * Firefox - 100%
-* Safari - 80% : Problems with portfolio animations
+* Safari - 80% : Problems with SVGs
 * IE - Unknown at the moment
+
+### Safari
+
+Issues with event listeners and SVGs, have an idea where the problem is and will implement a solution in the near future.
 
 ### Contact form
 

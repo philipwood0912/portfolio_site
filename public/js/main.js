@@ -9,15 +9,15 @@
         videoClose = document.querySelector(".close"),
         icons = document.querySelectorAll(".icon"),
         skillText = document.querySelector(".skillText");
-
+    //load window for svgs
     window.addEventListener("load", function(e) {
         var websvg = document.querySelector("#web"),
             chartsvg = document.querySelector("#chart"),
             spacesvg = document.querySelector("#jet");
+            //handle card flip
         cardsvg.forEach(svg => {
             let svgDoc = svg.contentDocument;
             svgDoc.addEventListener("click", function(e) {
-                console.log("click");
                 let svgParent = svg.parentElement;
                 let svgOverlay = svgParent.childNodes[1];
                 svgOverlay.classList.add("hidden");
@@ -25,17 +25,21 @@
                 svgDoc.href = `/${svg.dataset.iconref}`;
                 svgDoc.id = `${svg.dataset.numref}`;
                 svg.style.opacity = 0;
+                var delay = setTimeout(function() {
+                    svg.classList.add("hidden");
+                }, 1000);
             });
+            //grab data on flip
             svgDoc.addEventListener("click", parseFlipData);
         });
-
+        // function for overlay hide/show
         function overlayAniHide(target){
             target.classList.add("overlayAniHide");
         }
         function overlayAniShow(target){
             target.classList.remove("overlayAniHide");
         }
-
+        //web animation
         websvg.addEventListener("mouseover", function(e) {
             overlayAniHide(e.target.parentElement.childNodes[1]);
             let dots = e.target.contentDocument.querySelectorAll(".dot");
@@ -49,6 +53,7 @@
                 });
             });
         });
+        //chart animation
         chartsvg.addEventListener("mouseover", function(e) {
             overlayAniHide(e.target.parentElement.childNodes[1]);
             let line = e.target.contentDocument.querySelector("#line");
@@ -58,6 +63,7 @@
                 overlayAniShow(e.target.parentElement.childNodes[1]);
             });
         });
+        //games animation
         spacesvg.addEventListener("mouseover", function(e) {
             let tarSvg = e.target.contentDocument;
             overlayAniHide(e.target.parentElement.childNodes[1]);
@@ -70,8 +76,6 @@
                 });
             });
         });
-        
-
         //First api fetch
         //render title
         function renderTitle(data) {
@@ -119,7 +123,7 @@
         document.addEventListener("mouseover", function(e) {
             if(e.target.id > 0 && e.target.id < 8){
                 let list = e.target.parentElement;
-                e.target.style.background = "rgba(0,0,0,0.5)";
+                e.target.style.background = "rgba(0,0,0,0.7)";
                 list.style.background = `url(../images/portfolio/${e.target.dataset.imageref}) center center no-repeat`;
                 //debugger;
                 e.target.addEventListener("mouseleave", function(e) {
@@ -207,7 +211,7 @@
         videoBox.classList.add("hidden")
         video.currentTime = 0;
     });
-
+    //icon functionality
     icons.forEach(icon => {
         icon.addEventListener("mouseover", function(e) {
             skillText.textContent = `${e.target.dataset.skillref}`;
