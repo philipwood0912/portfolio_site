@@ -1,10 +1,10 @@
-/*const config = {
+const configLocal = {
     host: "localhost",
     port: 8889, // 8889 for mac 3306 for windows
     uname: "root",
     pword: "root", // leave blank for windows
     database: "db_portfolio"
-} */
+} 
 
 const config = {
     host: "us-cdbr-iron-east-05.cleardb.net",
