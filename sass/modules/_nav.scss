@@ -45,7 +45,11 @@
                     color: $off-color;
                     font-family: $main-font;
                     font-size: 30px;
+                    transition: .5s ease;
                 }
+            }
+            li:hover h2{
+                color: $main-color;
             }
         }
     }

@@ -34,7 +34,7 @@
 
   .front-flip {
       transition: .5s ease;
-      overflow: hidden;
+      //overflow: hidden;
 
   }
 
@@ -95,6 +95,7 @@
   .pieces {
       width: 100%;
       transition: 1s ease;
+      cursor: pointer;
   }
   #web {
       width: 95%;
@@ -105,7 +106,7 @@
 
   .overlay {
       position: absolute;
-      background-color: rgba(0,0,0,0.4);
+      background-color: rgba(0,0,0,0.7);
       text-align: center;
       border-radius: 20px;
       transition: 1s ease;
