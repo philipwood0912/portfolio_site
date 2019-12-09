@@ -12,51 +12,69 @@ router.get('/', (req, res) => {
 router.get('/Games', (req, res) => {
     console.log('at games route');
 
-    let query = `SELECT ID, Name, Image FROM tbl_projects WHERE Type = "Games"`;
+    sql.getConnection((err, connection) => {
+        if (err) { return console.log(err.message); }
+        let query = `SELECT ID, Name, Image FROM tbl_projects WHERE Type = "Games"`;
     
-    sql.query(query, (err, result) => {
-        if(err){ throw err; console.log(err); }
-        console.log(result);
-        res.json(result);
-    })
+        sql.query(query, (err, result) => {
+            connection.release();
+            if(err){ throw err; console.log(err.message); }
+            console.log(result);
+            
+            res.json(result);  
+        });
+    });
+    
 })
 
 router.get('/Data-Viz', (req, res) => {
     console.log("at data-viz route");
 
-    let query = `SELECT ID, Name, Image FROM tbl_projects WHERE Type = "Data-Viz"`;
+    sql.getConnection((err, connection) => {
+        if(err){ throw err; console.log(err.message); }
+        let query = `SELECT ID, Name, Image FROM tbl_projects WHERE Type = "Data-Viz"`;
     
-    sql.query(query, (err, result) => {
-        if(err){ throw err; console.log(err); }
-        console.log(result)
-        res.json(result);
-    })
+        sql.query(query, (err, result) => {
+            connection.release();
+            if(err){ throw err; console.log(err.message); }
+            console.log(result)
+            res.json(result);
+        });
+    });
 })
 
 router.get('/Web', (req, res) => {
     console.log("at web route");
 
-    let query = `SELECT ID, Name, Image FROM tbl_projects WHERE Type = "Web"`;
+    sql.getConnection((err, connection) => {
+        if(err){ throw err; console.log(err.message); }
+        let query = `SELECT ID, Name, Image FROM tbl_projects WHERE Type = "Web"`;
     
-    sql.query(query, (err, result) => {
-        if(err){ throw err; console.log(err); }
+        sql.query(query, (err, result) => {
+            connection.release();
+            if(err){ throw err; console.log(err.message); }
 
-        res.json(result);
-    })
+            res.json(result);
+        });
+    });
 })
 
 router.get('/:id', (req, res) => {
     console.log("at portfolio route");
 
-    let query = `SELECT * FROM tbl_projects WHERE ID = ${req.params.id}`;
+    sql.getConnection((err, connection) => {
+        if(err){ throw err; console.log(err.message); }
+        let query = `SELECT * FROM tbl_projects WHERE ID = ${req.params.id}`;
 
-    sql.query(query, (err, result) => {
-        if(err){ throw err; console.log(err); }
-        result[0].Builds = result[0].Builds.split(',').map(function(item){item = item.trim();return item;});
-        console.log(result[0]);
+        sql.query(query, (err, result) => {
+            connection.release();
+            if(err){ throw err; console.log(err.message); }
+            result[0].Builds = result[0].Builds.split(',').map(function(item){item = item.trim();return item;});
+            console.log(result[0]);
 
-        res.json(result[0]);
-    })
+            res.json(result[0]);
+        });
+    });
 })
 
 module.exports = router;

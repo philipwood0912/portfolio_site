@@ -1,7 +1,7 @@
 {
   "name": "portfolio_site",
   "version": "1.0.0",
-  "description": "",
+  "description": "The start of my portfolio site. Will currently be hosted on heroku.com until further notice, and site will further be updated.",
   "main": "app.js",
   "scripts": {
     "start": "node app"
@@ -19,7 +19,6 @@
   "dependencies": {
     "express": "^4.17.1",
     "express-handlebars": "^3.1.0",
-    "mysql": "^2.17.1",
-    "sass": "^1.23.7"
+    "mysql": "^2.17.1"
   }
 }
